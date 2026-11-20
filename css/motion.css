@@ -1,0 +1,92 @@
+/* Motion layer: GSAP ScrollSmoother + ScrollTrigger parallax.
+   Everything here is presentation-only; without JS (or with reduced motion) the page renders as designed. */
+
+/* Hero title lines are masked so each line can slide up into view. */
+.hero__title .line { display: block; overflow: hidden; padding-bottom: 0.06em; }
+.hero__title .line > span { display: block; }
+
+/* Parallax frames: the image inside is scaled and moved, so the frame clips it. */
+[data-parallax] { overflow: hidden; }
+[data-parallax] img { will-change: transform; }
+
+/* Large drifting wordmark behind the promise section. */
+.promise { position: relative; overflow: hidden; }
+.promise > .container { position: relative; z-index: 1; }
+.promise__bg-word {
+  position: absolute; top: 40px; left: 0; z-index: 0;
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(160px, 26vw, 380px); line-height: 1; letter-spacing: 0.2em;
+  color: var(--color-oak); opacity: 0.07; white-space: nowrap; pointer-events: none; user-select: none;
+}
+
+/* Pre-animation state: hidden only while JS motion is active (class set in <head>). */
+.js-motion [data-intro],
+.js-motion [data-reveal],
+.js-motion [data-reveal-group] > * { opacity: 0; }
+.js-motion .hero__img { transform: scale(1.12); }
+
+/* =====================================================================
+   Interaction patterns (Woodwrights-style): navbar states, link
+   underlines, button fills, image hover zoom, cycling process steps.
+   ===================================================================== */
+:root { --ease-ui: cubic-bezier(0.4, 0, 0.2, 1); }
+
+/* Navbar: transparent over the hero -> solid once scrolled; slides away while scrolling down. */
+.site-top { transition: transform 0.45s var(--ease-ui); }
+.site-top.is-hidden { transform: translateY(-100%); }
+.site-header { transition: background-color 0.3s var(--ease-ui), color 0.3s var(--ease-ui), box-shadow 0.3s var(--ease-ui); }
+.site-top.is-solid .site-header { background: var(--color-ivory); color: var(--text-primary); box-shadow: 0 1px 0 var(--line-card); }
+
+/* Underline that draws in from the left and leaves to the right (nav, announcement). */
+.site-nav a:not(.is-cta), .announce a {
+  background: linear-gradient(currentColor, currentColor) 100% 100% / 0 1px no-repeat;
+  transition: background-size 0.35s var(--ease-ui);
+}
+.site-nav a:not(.is-cta) { background-position: 100% calc(100% - 6px); }
+.site-nav a:not(.is-cta):hover, .announce a:hover { background-size: 100% 1px; background-position-x: 0; }
+
+/* Resting underline: on hover the current line exits right, then a new one draws in from the left. */
+.text-link, .site-nav a.is-cta, .footer-cols a { position: relative; display: inline-block; text-decoration: none; }
+.text-link::before, .text-link::after,
+.site-nav a.is-cta::before, .site-nav a.is-cta::after,
+.footer-cols a::before, .footer-cols a::after {
+  content: ""; position: absolute; left: 0; bottom: 0; height: 1px; background: currentColor;
+  transition: width 0.3s ease-in-out;
+}
+.text-link::after, .site-nav a.is-cta::after, .footer-cols a::after { width: 100%; }
+.text-link::before, .site-nav a.is-cta::before, .footer-cols a::before { width: 0; transition-delay: 0.3s; }
+.text-link:hover::after, .site-nav a.is-cta:hover::after, .footer-cols a:hover::after { width: 0; left: auto; right: 0; }
+.text-link:hover::before, .site-nav a.is-cta:hover::before, .footer-cols a:hover::before { width: 100%; }
+.site-nav a.is-cta::before, .site-nav a.is-cta::after { bottom: 2px; }
+
+/* Buttons fill on hover. */
+.btn { transition: background-color 0.3s var(--ease-ui), color 0.3s var(--ease-ui), border-color 0.3s var(--ease-ui); }
+.btn--primary:hover { background: var(--color-espresso); }
+.btn--primary-on-dark:hover { background: #FFFFFF; }
+.btn--outline-light:hover { background: var(--color-ivory); border-color: var(--color-ivory); color: var(--color-walnut); }
+.btn--outline:hover { background: var(--color-espresso); color: var(--text-on-dark); }
+
+/* Image hover zoom inside a fixed frame. */
+.thumb img, .figure-media img { transition: transform 0.9s var(--ease-ui); }
+.product-row:hover .thumb img,
+.lounge__details figure:hover .figure-media img { transform: scale(1.1); }
+
+.product-row__cta { display: inline-block; transition: transform 0.3s var(--ease-ui); }
+.product-row:hover .product-row__cta { transform: translateX(4px); }
+
+.card { transition: border-color 0.3s var(--ease-ui); }
+.card:hover { border-color: var(--color-walnut-light); }
+.card__more { display: inline-block; transition: transform 0.3s var(--ease-ui); }
+.card:hover .card__more { transform: translateX(4px); }
+
+/* Promise steps: one step is active at a time while the section cycles. */
+.promise-item__num { transition: color 0.3s var(--ease-ui); }
+.promise.is-cycling .promise-item:not(.is-active) .promise-item__num { color: var(--text-on-dark-faint); }
+
+@media (prefers-reduced-motion: reduce) {
+  .promise__bg-word { display: none; }
+  .site-top, .site-header, .btn, .thumb img, .figure-media img,
+  .product-row__cta, .card__more, .promise-item__num { transition: none; }
+  .text-link::before, .text-link::after, .site-nav a.is-cta::before, .site-nav a.is-cta::after,
+  .footer-cols a::before, .footer-cols a::after { transition: none; }
+}

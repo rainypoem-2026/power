@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>결 GYEOL — 한국 원목 가구</title>
+<meta name="description" content="솔리드 원목과 짜맞춤으로 만드는 결 다이닝 컬렉션. 구조 평생 보증, 장인이 직접 배송하고 설치합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;600&family=Noto+Sans+KR:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/motion.css">
+<script>
+  // Hide animated elements before first paint, only when motion is allowed.
+  // Safety net: if the animation script never runs, show everything after 3s.
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var root = document.documentElement;
+    root.classList.add('js-motion');
+    setTimeout(function () { if (!window.__gyeolMotionReady) root.classList.remove('js-motion'); }, 3000);
+  })();
+</script>
+</head>
+<body>
+
+<!-- 결 symbol: 'ㄹ' 받침을 나뭇결 곡선으로 재해석한 단선 마크 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="gyeol-mark" viewBox="0 0 120 120">
+    <path d="M22 30 C44 16, 74 44, 98 30 L98 60 C74 74, 46 46, 22 60 L22 90 C44 76, 74 104, 98 90"></path>
+  </symbol>
+</svg>
+
+<!-- Fixed top bar: lives outside the smooth-scroll wrapper so it stays put. -->
+<div class="site-top" id="site-top">
+  <div class="announce">
+    <div class="announce__inner">
+      <a href="#contact">쇼룸 찾기</a>
+      <span>구조 평생 보증, 장인이 직접 배송하고 설치합니다</span>
+      <span>결 다이닝 런칭 한정 50개</span>
+    </div>
+  </div>
+
+  <header class="site-header" data-intro>
+    <div class="site-header__inner">
+      <nav class="site-nav" aria-label="주요 메뉴">
+        <a href="#collection">컬렉션</a>
+        <a href="#lounge">라운지</a>
+        <a href="#wood">나무 이력</a>
+      </nav>
+      <a href="#top" class="site-logo" aria-label="결 GYEOL 처음으로">
+        <svg class="symbol" width="30" height="30" stroke-width="7" aria-hidden="true"><use href="#gyeol-mark"></use></svg>
+        <span class="wordmark">GYEOL</span>
+      </a>
+      <nav class="site-nav site-nav--end" aria-label="보조 메뉴">
+        <a href="#promise">결의 약속</a>
+        <a href="#contact">쇼룸</a>
+        <a href="#contact" class="is-cta">쇼룸 방문 예약</a>
+      </nav>
+    </div>
+  </header>
+</div>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+
+<section id="top" class="hero">
+  <img class="hero__img" src="assets/images/hero.jpg" alt="햇살이 드는 창가에 놓인 월넛 원목 라운지 체어와 사이드 테이블">
+  <div class="hero__scrim"></div>
+
+  <div class="hero__content">
+    <p class="hero__kicker" data-intro>KOREAN WOOD FURNITURE</p>
+    <h1 class="hero__title" lang="en"><span class="line"><span data-intro>Grows with</span></span><span class="line"><span data-intro>your grain.</span></span></h1>
+    <a href="#collection" class="btn btn--outline-light hero__cta" data-intro>컬렉션 보기</a>
+  </div>
+</section>
+
+<div class="trust">
+  <ul data-reveal-group>
+    <li>다이닝 컬렉션 솔리드 원목</li>
+    <li>FSC 인증 목재 · 출처 공개</li>
+    <li>구조 평생 보증</li>
+    <li>장인이 직접 배송·설치</li>
+  </ul>
+</div>
+
+<section class="container section">
+  <p class="eyebrow" data-reveal>FIND YOUR GYEOL</p>
+  <h2 class="h2 persona-title" data-reveal>어떤 집을 준비하고 계신가요?</h2>
+  <div class="grid-auto" data-reveal-group>
+    <a href="#collection" class="card">
+      <svg class="card__icon" width="44" height="44" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 22 L24 9 L40 22"></path><path d="M12 19 V39 H36 V19"></path><path d="M19 31 a5 5 0 1 0 5 -5 M24 23 l0 3 l3 0"></path></svg>
+      <h3 class="h3">지금 사는 집을 새롭게</h3>
+      <p>이사 대신 오래 쓸 가구 하나로 공간을 바꾸고 싶은 분. 지금 집의 치수에 맞춰 상담해 드립니다.</p>
+      <span class="card__more">추천: 다이닝 테이블 →</span>
+    </a>
+    <a href="#collection" class="card">
+      <svg class="card__icon" width="44" height="44" viewBox="0 0 48 48" aria-hidden="true"><circle cx="17" cy="24" r="7"></circle><path d="M24 24 H41 M35 24 V30 M40 24 V29"></path></svg>
+      <h3 class="h3">첫 집을 제대로</h3>
+      <p>입주나 신혼을 앞두고, 처음부터 대를 이어 쓸 가구를 고르고 싶은 분. 식탁과 의자를 함께 맞춰 드립니다.</p>
+      <span class="card__more">추천: 테이블 + 체어 세트 →</span>
+    </a>
+    <a href="#collection" class="card">
+      <svg class="card__icon" width="44" height="44" viewBox="0 0 48 48" aria-hidden="true"><path d="M16 8 V40 M32 8 V40 M16 12 Q24 8 32 12 M14 26 H34 M16 34 H32"></path></svg>
+      <h3 class="h3">한 점부터 시작</h3>
+      <p>한 번에 다 바꾸기보다, 취향에 맞는 좋은 가구를 하나씩 들이고 싶은 분. 의자 한 점부터 시작할 수 있습니다.</p>
+      <span class="card__more">추천: 다이닝 체어 →</span>
+    </a>
+  </div>
+</section>
+
+<section id="collection" class="bg-linen">
+  <div class="container collection">
+    <div class="collection__head">
+      <h2 class="h2" data-reveal><span class="muted">솔리드 원목으로 짓는</span><br>결 다이닝 컬렉션</h2>
+      <p class="collection__index" data-reveal>02 / Collection</p>
+    </div>
+    <div class="collection__body">
+      <div class="collection__hero" data-parallax>
+        <img class="cover" src="assets/images/dining-chair.jpg" alt="월넛 프레임과 패브릭 시트의 다이닝 체어">
+      </div>
+      <div class="collection__side">
+        <div class="collection__wide" data-parallax>
+          <img class="cover" src="assets/images/dining-table.jpg" alt="월넛 원목 다이닝 테이블">
+        </div>
+        <div class="collection__copy" data-reveal-group>
+          <p>장식보다 비례와 선으로. 무늬목이나 MDF 없이, 솔리드 원목 통판과 짜맞춤 구조로 집의 중심이 되는 식탁을 만듭니다.</p>
+          <p>가격은 수종과 치수에 따라 달라져 상담 후 안내하며, 견적서에는 목재·제작·마감·설치 비용을 항목별로 나눠 적어 드립니다.</p>
+        </div>
+        <div class="product-list" data-reveal-group>
+          <a href="#contact" class="product-row">
+            <span class="thumb"><img src="assets/images/dining-table.jpg" alt=""></span>
+            <span class="product-row__text"><span class="product-row__name">다이닝 테이블</span><span class="product-row__meta">월넛 · 화이트오크 · 집 치수에 맞춘 제작</span></span>
+            <span class="product-row__cta">견적 문의 →</span>
+          </a>
+          <a href="#contact" class="product-row">
+            <span class="thumb"><img src="assets/images/dining-chair.jpg" alt=""></span>
+            <span class="product-row__text"><span class="product-row__name">다이닝 체어</span><span class="product-row__meta">월넛 · 화이트오크 · 애쉬 · 한 점부터 주문 가능</span></span>
+            <span class="product-row__cta">견적 문의 →</span>
+          </a>
+          <a href="#contact" class="product-row">
+            <span class="thumb"><img src="assets/images/bench.jpg" alt=""></span>
+            <span class="product-row__text"><span class="product-row__name">벤치</span><span class="product-row__meta">월넛 · 화이트오크 · 길이 맞춤 가능</span></span>
+            <span class="product-row__cta">견적 문의 →</span>
+          </a>
+        </div>
+        <a href="#contact" class="text-link" data-reveal>견적 상담 받기 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lounge" class="container section">
+  <div class="lounge__head">
+    <div class="lounge__intro" data-reveal-group>
+      <p class="eyebrow">COMING NEXT · 결 리빙</p>
+      <h2 class="h2">결 라운지 체어</h2>
+      <p class="text-secondary">하루의 끝에 오래 머무는 자리. 월넛 셸과 부드러운 가죽, 회전 베이스로 만든 결 리빙 컬렉션의 첫 의자와 오토만입니다.</p>
+      <p class="lounge__materials">소재: 월넛 셸 · 천연 가죽 · 스틸 베이스</p>
+    </div>
+    <a href="#contact" class="btn btn--primary" data-reveal>출시 소식 받기</a>
+  </div>
+  <div class="lounge__gallery">
+    <div class="lounge__main" data-parallax>
+      <img src="assets/images/lounge.jpg" alt="거실 창가에 놓인 라운지 체어와 오토만">
+    </div>
+    <div class="lounge__details" data-depth="0.22" data-reveal-group>
+      <figure><span class="figure-media"><img src="assets/images/lounge-headrest.jpg" alt="곡선으로 감싸는 가죽 헤드레스트"></span><figcaption>감싸는 헤드레스트</figcaption></figure>
+      <figure><span class="figure-media"><img src="assets/images/lounge-leather.jpg" alt="가죽 표면과 스티치 클로즈업"></span><figcaption>가죽과 스티치</figcaption></figure>
+      <figure><span class="figure-media"><img src="assets/images/lounge-base.jpg" alt="월넛 셸 아래 회전 베이스"></span><figcaption>회전 베이스</figcaption></figure>
+      <figure><span class="figure-media"><img src="assets/images/lounge-ottoman.jpg" alt="월넛 테두리를 두른 가죽 오토만"></span><figcaption>짝을 이루는 오토만</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="wood" class="container section grid-auto provenance">
+  <div>
+    <p class="eyebrow" data-reveal>PROVENANCE</p>
+    <h2 class="h2" data-reveal>어디서 온 나무인지,<br>누가 만들었는지</h2>
+    <p class="text-secondary provenance__lead" data-reveal>결의 모든 가구에는 나무 이력 카드가 함께 갑니다. 좋은 소재라는 말 대신, 확인할 수 있는 기록을 드립니다.</p>
+    <ul class="provenance__list" data-reveal-group>
+      <li><strong>수종과 산지</strong><span> — FSC 인증 목재의 종류와 출처</span></li>
+      <li><strong>마감재</strong><span> — 천연 오일·수성 마감의 이름과 관리법</span></li>
+      <li><strong>만든 사람</strong><span> — 처음부터 끝까지 맡은 장인의 이름과 서명</span></li>
+    </ul>
+  </div>
+  <div class="wood-card-wrap" data-depth="0.3">
+    <div class="wood-card" data-reveal="card">
+      <div class="wood-card__top">
+        <svg class="symbol" width="30" height="30" stroke-width="7" aria-hidden="true"><use href="#gyeol-mark"></use></svg>
+        <span class="wood-card__serial">No. [일련번호]</span>
+      </div>
+      <div class="wood-card__title">나무 이력 카드</div>
+      <dl>
+        <dt>제품</dt><dd>[제품명]</dd>
+        <dt>수종</dt><dd>[수종]</dd>
+        <dt>산지</dt><dd>[산지]</dd>
+        <dt>마감</dt><dd>[마감재]</dd>
+        <dt>제작 장인</dt><dd>[장인 이름]</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="promise" class="bg-walnut promise">
+  <div class="promise__bg-word" aria-hidden="true">GYEOL</div>
+  <div class="container section section--even">
+    <p class="eyebrow" data-reveal>OUR PROMISE</p>
+    <h2 class="h2" data-reveal>사고 난 뒤가 더 편한 가구</h2>
+    <p class="promise__lead" data-reveal>배송이 늦어질까, 설치가 엉성할까, 고장 나면 연락이 될까. 좋은 가구를 사면서 하게 되는 걱정을 결이 먼저 약속으로 바꿉니다.</p>
+    <div class="grid-auto promise__grid" data-reveal-group>
+      <div class="promise-item"><span class="promise-item__bar" aria-hidden="true"></span><span class="promise-item__num">01</span><h3>제작 일정 공유</h3><p>주문부터 건조, 짜맞춤, 마감까지 단계마다 진행 상황을 알려 드립니다.</p></div>
+      <div class="promise-item"><span class="promise-item__bar" aria-hidden="true"></span><span class="promise-item__num">02</span><h3>장인이 직접 설치</h3><p>외주 기사가 아닌 결의 설치팀이 배치와 수평, 마감까지 확인합니다.</p></div>
+      <div class="promise-item"><span class="promise-item__bar" aria-hidden="true"></span><span class="promise-item__num">03</span><h3>담당자 직통 연결</h3><p>구매 후에도 처음 상담한 담당자에게 바로 연락할 수 있습니다.</p></div>
+      <div class="promise-item"><span class="promise-item__bar" aria-hidden="true"></span><span class="promise-item__num">04</span><h3>평생 보증과 리피니싱</h3><p>구조는 평생 보증하고, 세월이 쌓인 표면은 새로 다듬어 드립니다.</p></div>
+    </div>
+    <div class="promise__photo" data-parallax="strong">
+      <img src="assets/images/craftsman.jpg" alt="장인이 끌로 월넛 장부 맞춤을 다듬는 손">
+      <span class="promise__caption">한 사람이 처음부터 끝까지 — 선목, 건조, 짜맞춤, 마감</span>
+    </div>
+  </div>
+</section>
+
+<section class="container section grid-auto our-name">
+  <div>
+    <p class="eyebrow" data-reveal>OUR NAME</p>
+    <h2 class="h2" data-reveal>시간이 지날수록,<br>결이 깊어집니다</h2>
+    <div class="our-name__media" data-parallax>
+      <img src="assets/images/logo-on-wood.jpg" alt="월넛 나뭇결 위의 결 로고">
+    </div>
+  </div>
+  <div class="our-name__list" data-depth="0.15" data-reveal-group>
+    <div><h3>나무의 결</h3><p>원목 본연의 무늬를 가리지 않는 디자인과 마감.</p></div>
+    <div><h3>삶의 결</h3><p>한국의 집과 생활에 맞춘 치수와 비례.</p></div>
+    <div><h3>시간의 결</h3><p>쓸수록 깊어지는 색과 손때, 대를 이어 쓰는 내구성.</p></div>
+  </div>
+</section>
+
+<section id="contact" class="bg-linen">
+  <div class="container section grid-auto contact">
+    <div class="contact__info">
+      <div data-reveal-group>
+        <p class="eyebrow">SHOWROOM</p>
+        <h2 class="h2">직접 앉아 보고,<br>만져 보세요</h2>
+        <p class="text-secondary">쇼룸은 예약제로 한 팀씩 맞이합니다. 집의 평면도나 사진을 가져오시면 공간에 맞는 크기와 수종을 함께 고르고, 항목별 견적을 그 자리에서 안내해 드립니다.</p>
+      </div>
+      <div class="contact__photo" data-parallax><img class="cover" src="assets/images/showroom.jpg" alt="창가에 라운지 체어와 오토만을 배치한 쇼룸 공간"></div>
+      <div class="contact__facts" data-reveal-group>
+        <div><span>주소</span>[쇼룸 주소]</div>
+        <div><span>운영 시간</span>[운영 시간] · 예약제</div>
+        <div><span>전화</span>[대표 전화]</div>
+        <div><span>이메일</span>[대표 이메일]</div>
+      </div>
+    </div>
+
+    <div class="contact__aside">
+    <div class="panel" data-reveal>
+      <form class="form" id="visit-form" novalidate>
+        <h3 class="h3 h3--lg">쇼룸 방문 예약</h3>
+        <div class="grid-auto form__row">
+          <label class="field">이름<input type="text" name="name" autocomplete="name"></label>
+          <label class="field">연락처<input type="tel" name="phone" autocomplete="tel"></label>
+        </div>
+        <div class="grid-auto form__row">
+          <label class="field">어떤 집인가요
+            <select name="home">
+              <option>지금 사는 집을 새롭게</option>
+              <option>새 집 입주·신혼</option>
+              <option>한 점부터 시작</option>
+              <option>매장·작업실 등 공간</option>
+            </select>
+          </label>
+          <label class="field">관심 제품
+            <select name="product">
+              <option>다이닝 테이블</option>
+              <option>다이닝 체어</option>
+              <option>벤치</option>
+              <option>맞춤 제작</option>
+              <option>아직 모르겠어요</option>
+            </select>
+          </label>
+        </div>
+        <label class="field">희망 방문일<input type="date" name="visit"></label>
+        <label class="field">메시지 (공간 크기, 원하는 분위기 등)<textarea name="message" rows="3"></textarea></label>
+        <button type="submit" class="btn btn--primary btn--block">방문 예약 요청하기</button>
+        <p class="form__note">영업일 기준 1일 안에 담당자가 직접 연락드립니다.</p>
+      </form>
+
+      <div class="form-done" id="visit-done" hidden>
+        <svg class="symbol" width="48" height="48" stroke-width="6" aria-hidden="true"><use href="#gyeol-mark"></use></svg>
+        <h3 class="h3 h3--lg" tabindex="-1">예약 요청이 접수되었습니다</h3>
+        <p>담당자가 연락드려 방문 일정을 함께 정하겠습니다.</p>
+        <button type="button" class="btn btn--outline" id="visit-reset">다시 작성하기</button>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner" data-reveal-group>
+    <div class="footer-logo">
+      <svg class="symbol" width="48" height="48" stroke-width="6" aria-hidden="true"><use href="#gyeol-mark"></use></svg>
+      <span class="footer-logo__ko">결</span>
+      <span class="footer-logo__en">GYEOL</span>
+    </div>
+    <div class="footer-cols">
+      <div><span>팔로우</span><a href="#top">Instagram [계정]</a><br><a href="#top">YouTube [채널]</a></div>
+      <div><span>사업자 정보</span>[상호] · 대표 [이름]<br>사업자등록번호 [번호]<br>[사업장 주소]</div>
+    </div>
+  </div>
+  <div class="container site-footer__copy">© GYEOL. All rights reserved.</div>
+</footer>
+
+</div><!-- /#smooth-content -->
+</div><!-- /#smooth-wrapper -->
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+<script src="js/form.js"></script>
+<script src="js/motion.js"></script>
+</body>
+</html>

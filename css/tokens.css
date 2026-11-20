@@ -1,0 +1,61 @@
+/* GYEOL web design system tokens (07 — WEB DESIGN SYSTEM v1.0) */
+:root {
+  /* Color — surfaces */
+  --color-ivory: #F6F1E7;        /* 기본 배경 */
+  --color-linen: #EDE5D6;        /* 교차 섹션, 신뢰 띠 */
+  --color-walnut: #5C3D2E;       /* 어두운 섹션, 주요 버튼 */
+  --color-espresso: #3B2A20;     /* 본문 텍스트, 선 */
+  --color-oak: #E3C9A8;          /* 안내 박스, 어두운 배경 위 강조 */
+  --color-walnut-light: #8A5A3B; /* 아이콘, 아이브로 */
+  --color-paper: #FFFDF8;        /* 카드, 입력창 배경 */
+
+  /* Color — text */
+  --text-primary: #3B2A20;
+  --text-secondary: #5E4B40;
+  --text-caption: #6E5A4D;
+  --text-muted-warm: #8A7360;
+  --text-on-dark: #F6F1E7;
+  --text-on-dark-secondary: #E1D2BF;
+  --text-on-dark-faint: #B89F88;
+
+  /* Color — lines */
+  --line-card: #E2D8C8;
+  --line-divider: #CDBFAA;
+  --line-input: #B5A390;
+  --line-on-dark: #7A5A47;
+
+  /* Type */
+  --font-sans: 'Noto Sans KR', system-ui, sans-serif;
+  --font-serif: 'Noto Serif KR', serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --fs-h1: clamp(46px, 6.6vw, 96px);
+  --fs-h2: clamp(28px, 4vw, 40px);
+  --fs-h3: 22px;
+  --fs-body: 16px;
+  --fs-small: 15px;
+  --fs-eyebrow: 14px;
+  --fs-caption: 13px;
+  --lh-body: 1.7;
+  --tracking-eyebrow: 0.2em;
+  --tracking-wordmark: 0.32em;
+
+  /* Spacing scale */
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-56: 56px;
+
+  /* Layout */
+  --container: 1200px;
+  --gutter: 24px;
+  --section-pad-top: 112px;
+  --section-pad-bottom: 96px;
+
+  /* Radius */
+  --radius-sm: 4px;   /* 입력창, 이미지 */
+  --radius-md: 6px;   /* 카드 */
+  --radius-lg: 14px;  /* 컬렉션 대형 이미지 */
+  --radius-pill: 999px; /* 버튼 */
+}
